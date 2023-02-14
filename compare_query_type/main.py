@@ -1,6 +1,5 @@
 import requests
-from json import JSONDecoder, JSONEncoder
-import json
+from json import JSONEncoder
 
 
 def req_method_validation(meth: str, args: dict):
