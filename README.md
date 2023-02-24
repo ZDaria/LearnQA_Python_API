@@ -26,5 +26,5 @@ python3 -m pytest --alluredir=test_results/ tests/test_user_auth.py
 How to collect Allure report
 
 ```rb
-allure serv test_results
+allure serve test_results
 ```
