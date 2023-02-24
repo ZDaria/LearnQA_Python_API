@@ -1,4 +1,5 @@
 from requests import request, RequestException
+from lib.logger import Logger
 
 
 class MyRequests:
@@ -32,6 +33,8 @@ class MyRequests:
         if cookies is None:
             cookies = {}
 
+        Logger.add_request(url, data, headers, cookies, method)
+
         try:
             if method == 'GET':
                 response = request(method=method, url=url, params=data,
@@ -41,5 +44,7 @@ class MyRequests:
                                    headers=headers, cookies=cookies)
         except RequestException as e:
             raise Exception(e)
+
+        Logger.add_response(response)
 
         return response

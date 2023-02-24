@@ -26,7 +26,7 @@ class TestUserEdit(BaseCase):
 
         response2 = MyRequests.post("/user/login", data=login_data)
 
-        auth_sid = self.get_coolie(response2, 'auth_sid')
+        auth_sid = self.get_cookie(response2, 'auth_sid')
         token = self.get_header(response2, 'x-csrf-token')
 
         # EDIT

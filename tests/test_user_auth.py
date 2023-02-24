@@ -18,7 +18,7 @@ class TestUserAuth(BaseCase):
 
         response1 = MyRequests.post("/user/login", data=data)
 
-        self.auth_sid = self.get_coolie(response1, "auth_sid")
+        self.auth_sid = self.get_cookie(response1, "auth_sid")
         self.token = self.get_header(response1, "x-csrf-token")
         self.user_id_from_auth_method = self.get_json_value(response1,
                                                             "user_id")
