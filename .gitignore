@@ -126,3 +126,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Allure
+test_results/*
+
+# Logging
+logs/*
